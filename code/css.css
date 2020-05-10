@@ -13,6 +13,7 @@
 body {
 	font-family: "PT Sans";
 	font-weight: 700;
+	background: #000;
 	text-transform: uppercase;
 	color: #000;
 	display: flex;
@@ -31,8 +32,8 @@ body {
 x-guys {
 	display: flex;
 	background: var(--bg);
-	width: 800px;
-	height: 260px;
+	width: 760px;
+	height: 200px;
 	position: relative;
 }
 
