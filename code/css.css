@@ -1,14 +1,8 @@
-@font-face {
-	font-family: "helv";
-	src: url("./font/helvetica.otf");
-}
-@font-face {
-	font-family: "tk";
-	src: url("./font/tekton.otf");
-}
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap");
 
 :root {
 	--red: #c92027;
+	--bg: #fff500;
 }
 
 * {
@@ -17,53 +11,66 @@
 }
 
 body {
-	font-family: "tk";
-	color: var(--red);
-	background: #fff;
-	width: 1280px;
-	height: 720px;
+	font-family: "PT Sans";
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #000;
 	display: flex;
+	line-height: 1;
 	align-items: center;
 	justify-content: center;
 	position: absolute;
 	flex-direction: column;
 	box-sizing: border-box;
-	padding: 4em;
 	text-align: center;
+	width: 800px;
+	height: 460px;
 	-webkit-font-smoothing: antialiased;
 }
 
-body[data-inverted] {
-	color: #fff;
-	background: var(--red);
+x-guys {
+	display: flex;
+	background: var(--bg);
+	width: 800px;
+	height: 260px;
+	position: relative;
 }
 
-h1 {
-	font-family: "helv";
-	text-transform: uppercase;
-	font-size: 120px;
-	line-height: calc(120px * 1);
-	color: var(--blue);
-	letter-spacing: -0.03em;
+x-guys bg-1,
+x-guys bg-2 {
+	background-image: url(arrws.svg);
+	background-position: top bottom;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 50%;
+	filter: hue-rotate(var(--rota));
+}
+x-guys bg-2 {
+	right: 0;
+	transform: scaleX(-1);
 }
 
-h1 span {
-	font-size: 0.3em;
-	vertical-align: text-top;
-	line-height: 35px;
+x-words {
+	background: var(--bg);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 1rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
-h1 strong {
-	color: var(--red);
-	font-weight: inherit;
+x-words > img {
+	height: 20%;
+	padding: 0;
+	filter: hue-rotate(var(--rota));
 }
 
-h2 {
-	font-size: 70px;
-	line-height: calc(70px * 1.1);
-	margin-top: 30px;
-}
-
-h2 x-guys-word {
-	text-transform: uppercase;
+x-words > * {
+	font-size: 2.8em;
+	padding: 0 0.5em;
 }

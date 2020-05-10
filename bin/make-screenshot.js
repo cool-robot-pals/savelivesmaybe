@@ -5,7 +5,7 @@ const Bundler = require("parcel-bundler");
 const outPath = config.paths.screenie;
 
 const startServer = () =>
-	new Promise(rt => {
+	new Promise((rt) => {
 		const bundler = new Bundler(__dirname + "/../code/index.html");
 		bundler.on("buildEnd", () => {
 			rt(`http://localhost:${config.ports.test}`);
@@ -13,15 +13,15 @@ const startServer = () =>
 		bundler.serve(config.ports.test);
 	});
 
-const takeScreenshot = async url => {
+const takeScreenshot = async (url) => {
 	const browser = await puppeteer.launch({
 		args: ["--no-sandbox"],
-		ignoreHTTPSErrors: true
+		ignoreHTTPSErrors: true,
 	});
 	const page = await browser.newPage();
 
 	return new Promise((yay, nay) => {
-		page.on("console", async msg => {
+		page.on("console", async (msg) => {
 			try {
 				const log = JSON.parse(msg.text());
 				if (!log.number) {
@@ -35,8 +35,11 @@ const takeScreenshot = async url => {
 				nay([e, msg]);
 			}
 		});
-		Promise.all([page.setViewport({ width: 1280, height: 720 }), page.goto(url)]);
+		Promise.all([
+			page.setViewport({ width: 800, height: 460 }),
+			page.goto(url),
+		]);
 	});
 };
 
-module.exports = () => startServer().then(url => takeScreenshot(url));
+module.exports = () => startServer().then((url) => takeScreenshot(url));
