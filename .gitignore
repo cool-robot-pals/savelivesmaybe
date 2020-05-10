@@ -1,0 +1,9 @@
+
+node_modules
+dest/*
+!dest/.gitexists
+dist/*
+.env
+.glitch-assets
+.vscode
+.cache

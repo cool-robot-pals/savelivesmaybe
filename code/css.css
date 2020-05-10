@@ -1,0 +1,69 @@
+@font-face {
+	font-family: "helv";
+	src: url("./font/helvetica.otf");
+}
+@font-face {
+	font-family: "tk";
+	src: url("./font/tekton.otf");
+}
+
+:root {
+	--red: #c92027;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "tk";
+	color: var(--red);
+	background: #fff;
+	width: 1280px;
+	height: 720px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 4em;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+
+body[data-inverted] {
+	color: #fff;
+	background: var(--red);
+}
+
+h1 {
+	font-family: "helv";
+	text-transform: uppercase;
+	font-size: 120px;
+	line-height: calc(120px * 1);
+	color: var(--blue);
+	letter-spacing: -0.03em;
+}
+
+h1 span {
+	font-size: 0.3em;
+	vertical-align: text-top;
+	line-height: 35px;
+}
+
+h1 strong {
+	color: var(--red);
+	font-weight: inherit;
+}
+
+h2 {
+	font-size: 70px;
+	line-height: calc(70px * 1.1);
+	margin-top: 30px;
+}
+
+h2 x-guys-word {
+	text-transform: uppercase;
+}
